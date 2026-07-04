@@ -1,0 +1,28 @@
+EMBRYOLAB PRO — LICENCIA COMERCIAL DE USO
+
+Copyright (c) 2026 MedStudents · Dr. Abdi
+Todos los derechos reservados.
+
+1. CONCESIÓN
+   Licencia no exclusiva, intransferible, limitada a una (1) instalación
+   por licencia adquirida, para uso educativo o institucional.
+
+2. USOS PERMITIDOS
+   - Desplegar en su propio servidor o LMS (Odoo, Moodle, Canvas, etc.)
+   - Modificar estilos visuales manteniendo la autoría visible
+   - Añadir contenido clínico siguiendo la estructura
+
+3. USOS PROHIBIDOS
+   - Revender o redistribuir sin autorización escrita
+   - Eliminar avisos de autoría (MedStudents, Dr. Abdi)
+   - Uso con fines de diagnóstico clínico real (contenido EDUCATIVO)
+   - Ingeniería inversa para crear productos competidores
+
+4. LIMITACIÓN DE RESPONSABILIDAD
+   SOFTWARE PROPORCIONADO "TAL CUAL". CONTENIDO EDUCATIVO, NO SUSTITUYE
+   EVALUACIÓN MÉDICA PROFESIONAL.
+
+5. DEPENDENCIAS DE TERCEROS
+   - Google model-viewer (Apache-2.0)
+   - Google Fonts (SIL Open Font License)
+   - Vectary (visores 3D embebidos)

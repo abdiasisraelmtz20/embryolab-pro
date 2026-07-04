@@ -1,0 +1,14 @@
+{
+  "name": "EmbryoLab PRO",
+  "short_name": "EmbryoLab",
+  "description": "Atlas de anomalías congénitas con modelos 3D y Realidad Aumentada",
+  "start_url": "../index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0c",
+  "theme_color": "#042D5A",
+  "icons": [
+    { "src": "./favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ],
+  "categories": ["education", "medical", "reference"],
+  "lang": "es"
+}

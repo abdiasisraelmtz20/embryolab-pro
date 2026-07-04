@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; frame-src https://app.vectary.com; connect-src 'self' data: blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+<meta name="permissions-policy" content="geolocation=(), microphone=(), camera=(), payment=()" />
+
+<title>EmbryoLab PRO · MedStudents · Atlas de Anomalías Congénitas</title>
+<meta name="description" content="Atlas interactivo de anomalías congénitas con modelos 3D y Realidad Aumentada. Dirigido por el Dr. Abdi." />
+<meta name="author" content="MedStudents · Dr. Abdi" />
+<meta name="theme-color" content="#042D5A" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="EmbryoLab PRO · Atlas de Anomalías Congénitas" />
+<meta property="og:description" content="Atlas interactivo con modelos 3D y Realidad Aumentada." />
+<meta property="og:locale" content="es_ES" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
+<link rel="manifest" href="./public/manifest.webmanifest" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://app.vectary.com" />
+<link rel="preload" as="fetch" href="./public/abdi-method.glb" type="model/gltf-binary" crossorigin="anonymous" />
+
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+
+<script type="module" src="./vendor/model-viewer/model-viewer.min.js"></script>
+
+<link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+
+<div class="el-app" id="elApp" data-theme="dark">
+
+  <header class="el-nav" role="banner">
+    <div class="el-nav-inner">
+      <div class="el-brand">
+        <img class="el-brand-logo" src="https://www.medstudents.page/web/image/86984-b88224b8/LOGO%20MEDSTUDENTS_Mesa%20de%20trabajo%201%20copia.webp" alt="MedStudents" width="112" height="28" loading="eager" decoding="async" referrerpolicy="no-referrer" />
+        <span class="el-brand-text">EmbryoLab<span class="slash">/</span><span class="pro">PRO</span></span>
+        <span class="el-brand-version">V1.0</span>
+      </div>
+      <nav class="el-breadcrumb" id="elBreadcrumb" aria-label="Ruta de navegación"></nav>
+      <div class="el-nav-right">
+        <button class="el-back-btn" id="elBackBtn" style="display:none" aria-label="Volver" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span id="elBackLabel">Volver</span>
+        </button>
+        <div class="el-theme-toggle" role="group" aria-label="Cambiar tema">
+          <button class="el-theme-btn" data-theme-set="light" aria-label="Modo día" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          </button>
+          <button class="el-theme-btn active" data-theme-set="dark" aria-label="Modo noche" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="el-viewport" id="elMain">
+
+    <section class="el-view active" id="viewHome" aria-labelledby="homeTitle">
+      <div class="el-home">
+        <div class="el-home-inner">
+          <div>
+            <div class="el-home-eyebrow"><span class="badge">V1.0</span>Edición Segundo Parcial · 2026</div>
+            <h1 class="el-home-title" id="homeTitle">Embryo<span class="it">Lab</span><span class="line2">Atlas.</span></h1>
+            <p class="el-home-sub">El laboratorio visual de anomalías congénitas en 3D.</p>
+            <div class="el-ar-banner">
+              <div class="el-ar-banner-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9V5a2 2 0 0 1 2-2h4M3 15v4a2 2 0 0 0 2 2h4M21 9V5a2 2 0 0 0-2-2h-4M21 15v4a2 2 0 0 1-2 2h-4M12 7l4 2.5v5L12 17l-4-2.5v-5L12 7z"/></svg>
+              </div>
+              <div class="el-ar-banner-text">
+                <div class="t">Realidad Aumentada · AR Ready</div>
+                <div class="d">Observa cada anomalía en el espacio real con tu móvil.</div>
+              </div>
+            </div>
+            <p class="el-home-desc">
+              Herramienta clínica para estudiantes de medicina. Cinco sistemas embriológicos,
+              modelos 3D interactivos, proyección en realidad aumentada, tabla de Método ABDI
+              y examen de autoevaluación por anomalía. Dirigido por el Dr. Abdi.
+            </p>
+            <div class="el-home-cta">
+              <button class="el-btn primary" id="goToIndex" type="button">
+                Ver índice de temas
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+            <div class="el-home-specs">
+              <div><div class="el-spec-value"><span class="it">05</span></div><div class="el-spec-label">Sistemas</div></div>
+              <div><div class="el-spec-value">AR</div><div class="el-spec-label">3D & Aumentada</div></div>
+              <div><div class="el-spec-value">Q5</div><div class="el-spec-label">Test / Anomalía</div></div>
+            </div>
+          </div>
+          <div class="el-home-visual">
+            <div class="el-visual-card">
+              <div class="el-visual-brackets" aria-hidden="true"></div>
+              <div class="el-visual-hud">
+                <div class="el-hud-chip accent">AUTOR</div>
+                <div class="el-hud-chip">PROFILE · 001</div>
+              </div>
+              <img src="https://www.medstudents.page/web/image/86985-c2baba5c/C83DEFFF-D3AE-47A1-BEED-D33E465EE69D.webp" alt="Retrato del Dr. Abdi" width="440" height="550" loading="eager" decoding="async" referrerpolicy="no-referrer" />
+              <div class="el-visual-meta">
+                <div>
+                  <div class="name">Dr. Abdi</div>
+                  <div class="role">Clinical Embryology Lead</div>
+                </div>
+                <div class="right-info">
+                  <div>EMBRYOLAB</div>
+                  <div class="v">V1.0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="el-view" id="viewIndex" aria-labelledby="indexTitle">
+      <div class="el-index">
+        <div class="el-index-head">
+          <div class="el-index-ey">Índice de temas · Segundo parcial</div>
+          <h2 class="el-index-title" id="indexTitle">Cinco sistemas.<br><span class="muted">Un</span> <span class="it">laboratorio.</span></h2>
+          <p class="el-index-sub">Selecciona un sistema embriológico para acceder a sus anomalías congénitas.</p>
+        </div>
+        <div class="el-topics-grid" id="elTopicsGrid" role="list"></div>
+      </div>
+    </section>
+
+    <section class="el-view" id="viewAnomaliesList" aria-label="Lista de anomalías">
+      <div class="el-anomalies-list" id="elAnomaliesListContainer"></div>
+    </section>
+
+    <section class="el-view" id="viewAnomalyDetail" aria-label="Detalle de anomalía">
+      <div class="el-detail" id="elDetailContainer"></div>
+    </section>
+
+  </main>
+
+  <footer class="el-footer" role="contentinfo">
+    <div class="l">
+      <img src="https://www.medstudents.page/web/image/86984-b88224b8/LOGO%20MEDSTUDENTS_Mesa%20de%20trabajo%201%20copia.webp" alt="MedStudents" width="80" height="20" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+      <span>© 2026 MedStudents · EmbryoLab PRO</span>
+    </div>
+    <div class="r">
+      <span>ATLAS · EMBRIOLOGÍA</span>
+      <span>V1.0 · PRO</span>
+      <span>2º PARCIAL</span>
+    </div>
+  </footer>
+
+</div>
+
+<noscript>
+  <div style="padding:40px;text-align:center;font-family:system-ui;color:#0a0a0c;background:#fff">
+    <h1 style="font-size:24px;margin-bottom:16px">JavaScript requerido</h1>
+    <p>EmbryoLab PRO necesita JavaScript activado para funcionar.</p>
+  </div>
+</noscript>
+
+<script src="./src/data.js" defer></script>
+<script src="./src/app.js" defer></script>
+
+</body>
+</html>
