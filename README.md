@@ -89,3 +89,4 @@ Ver [`docs/SECURITY.md`](docs/SECURITY.md).
 Producto comercial. Ver [`LICENSE`](LICENSE).
 
 © 2026 MedStudents · Dr. Abdi
+Publicado con GitHub Pages.
